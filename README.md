@@ -15,3 +15,7 @@ giveWords(2, 3, 5) will give you a JSON-formatted string separated by category.
 Receiving data: 
 Import the file and use it in a manner similar to this:
 main_output = giveWords(2, 3, 5)
+
+UML:
+
+![UML](https://github.com/sanen03/CS361PartnerMicroservice/blob/main/UML.png)
