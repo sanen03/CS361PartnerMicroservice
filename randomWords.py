@@ -1,4 +1,5 @@
 import random
+import json
 
 verb_list = ["close"
              "tremble",
@@ -154,7 +155,8 @@ adjective_list = [
     "complex",
     "various"]
 
-output = {"Nouns:" [""], "Verbs:" [""], "Adjectives:" [""]}
+
+output = {"Nouns:": [], "Verbs:": [], "Adjectives:": []}
 
 
 def giveWords(noun, verb, adjective):
@@ -170,8 +172,7 @@ def giveWords(noun, verb, adjective):
     for i in range(0, adjective):
         num = random.randint(0, 49)
         adjective_out.append(adjective_list[num])
-    output["Nouns"] += noun_out
+    output["Nouns:"] += noun_out
     output["Verbs:"] += verb_out
     output["Adjectives:"] += adjective_out
-    return output
-
+    return json.dumps(output)
