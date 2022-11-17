@@ -155,7 +155,6 @@ adjective_list = [
     "complex",
     "various"]
 
-
 output = {"Nouns:": [], "Verbs:": [], "Adjectives:": []}
 
 
@@ -164,15 +163,23 @@ def giveWords(noun, verb, adjective):
     verb_out = []
     adjective_out = []
     for i in range(0, noun):
-        num = random.randint(0, 49)
+        num = random.randint(0, 48)
         noun_out.append(noun_list[num])
     for i in range(0, verb):
-        num = random.randint(0, 49)
+        num = random.randint(0, 48)
         verb_out.append(verb_list[num])
     for i in range(0, adjective):
-        num = random.randint(0, 49)
+        num = random.randint(0, 48)
         adjective_out.append(adjective_list[num])
     output["Nouns:"] += noun_out
     output["Verbs:"] += verb_out
     output["Adjectives:"] += adjective_out
     return json.dumps(output)
+
+
+noun_num = int(input("How many nouns do you want? "))
+verb_num = int(input("How many verbs do you want? "))
+adjective_num = int(input("How many adjectives do you want? "))
+final_output = giveWords(noun_num, verb_num, adjective_num)
+with open("output.txt", "w") as f:
+    f.write(final_output)
